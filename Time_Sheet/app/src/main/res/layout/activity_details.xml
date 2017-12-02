@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.teamkm.time_sheet.Details">
+    <ScrollView
+        android:id="@+id/sv1"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView4"
+        android:layout_weight="1"
+        android:scrollbars="none"
+        android:paddingBottom="1dp"
+        android:paddingTop="3dp"
+        >
+
+        <TableLayout
+            android:id="@+id/tb1"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_alignStart="@+id/textView9"
+            android:layout_below="@+id/textView9"
+            android:layout_marginTop="22dp"
+            android:orientation="horizontal"
+            android:stretchColumns="*"
+            >
+            <TableRow>
+                <TextView android:text="****WEEK 1****"
+                    android:layout_gravity="center"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/w1day"
+                    android:layout_width="3dp"
+                    android:layout_height="wrap_content"
+                    android:text="DAY"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/w1reg"
+                    android:layout_width="3dp"
+                    android:layout_height="wrap_content"
+                    android:text="Reg"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/w1hol"
+                    android:layout_width="3dp"
+                    android:layout_height="wrap_content"
+                    android:text="Hol"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/w1vac"
+                    android:layout_width="3dp"
+                    android:layout_height="wrap_content"
+                    android:text="Vac"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/w1sic"
+                    android:layout_width="3dp"
+                    android:layout_height="wrap_content"
+                    android:text="Sick"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/w1oh"
+                    android:layout_width="3dp"
+                    android:layout_height="wrap_content"
+                    android:text="Other Hrs"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/w1oc"
+                    android:layout_width="3dp"
+                    android:layout_height="wrap_content"
+                    android:text="Other Code"
+                    android:textSize="12dp"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="1dp">
+
+                <TextView
+                    android:id="@+id/w1t"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thursday"
+                    android:textSize="12dp"
+                    />
+
+                <EditText
+                    android:id="@+id/edThurRegW1"
+                    android:inputType="number" />
+
+                <EditText android:id="@+id/edThurHolW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edThurVacW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edThurSicW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edThurOHW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edThurOCW1"
+                    android:inputType="number"/>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/w1f"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friday"
+                    android:textSize="12dp"/>
+
+                <EditText android:id="@+id/edFriRegW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edFriHolW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edFriVacW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edFriSicW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edFriOHW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edFriOCW1"
+                    android:inputType="number"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/w1st0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Saturday"
+                    android:textSize="12dp"/>
+
+                <EditText android:id="@+id/edSatRegW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSatHolW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSatVacW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSatSicW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSatOHW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSatOCW1"
+                    android:inputType="number"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/w1sn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sunday"
+                    android:textSize="12dp"/>
+
+                <EditText android:id="@+id/edSunRegW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSunHolW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSunVacW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSunSicW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSunOHW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSunOCW1"
+                    android:inputType="number"/>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/w1m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Monday"
+                    android:textSize="12dp"/>
+
+                <EditText android:id="@+id/edMonRegW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edMonHolW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edMonVacW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edMonSicW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edMonOHW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edMonOCW1"
+                    android:inputType="number"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/w1tu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tuesday"
+                    android:textSize="12dp"/>
+
+                <EditText android:id="@+id/edTueRegW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edTueHolW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edTueVacW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edTueSicW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edTueOHW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edTueOCW1"
+                    android:inputType="number"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <TextView
+                    android:id="@+id/w1w"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wednesday"
+                    android:textSize="12dp"/>
+
+                <EditText android:id="@+id/edWedRegW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edWedHolW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edWedVacW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edWedSicW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edWedOHW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edWedOCW1"
+                    android:inputType="number"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/w1pj"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="PROJECT"
+                    android:textSize="12dp"/>            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="3dp">
+
+                <TextView
+                    android:id="@+id/w1pid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2301TUEXP"
+                    android:textSize="12dp"/>
+
+                <EditText
+                    android:id="@+id/edpdRegW1"
+                    android:inputType="number" />
+
+                <EditText android:id="@+id/edpdHolW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edpdVacW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edpdSicW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edpdOHW1"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edpdOCW1"
+                    android:inputType="number"/>
+
+
+            </TableRow>
+
+            <TableRow>
+                <TextView />
+            </TableRow>
+
+
+            <TableRow>
+                <TextView android:text="****WEEK 2****"
+                    android:layout_gravity="center"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/w2day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DAY"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/w2reg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reg"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/w2hol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hol"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/w2vac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vac"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/w2sic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sick"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/w2oh"
+                    android:layout_width="3dp"
+                    android:layout_height="wrap_content"
+                    android:text="Other Hrs"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/w2oc"
+                    android:layout_width="3dp"
+                    android:layout_height="wrap_content"
+                    android:text="Other Code"
+                    android:textSize="12dp"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="3dp">
+
+                <TextView
+                    android:id="@+id/w2t"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thursday"
+                    android:textSize="12dp"/>
+
+                <EditText
+                    android:id="@+id/edThurRegW2"
+                    android:inputType="number" />
+
+                <EditText android:id="@+id/edThurHolW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edThurVacW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edThurSicW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edThurOHW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edThurOCW2"
+                    android:inputType="number"/>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/w2f"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friday"
+                    android:textSize="12dp"/>
+
+                <EditText android:id="@+id/edFriRegW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edFriHolW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edFriVacW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edFriSicW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edFriOHW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edFriOCW2"
+                    android:inputType="number"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/w2st0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Saturday"
+                    android:textSize="12dp"/>
+
+                <EditText android:id="@+id/edSatRegW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSatHolW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSatVacW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSatSicW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSatOHW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSatOCW2"
+                    android:inputType="number"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/w2sn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sunday"
+                    android:textSize="12dp"/>
+
+                <EditText android:id="@+id/edSunRegW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSunHolW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSunVacW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSunSicW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSunOHW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edSunOCW2"
+                    android:inputType="number"/>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/w2m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Monday"
+                    android:textSize="12dp"/>
+
+                <EditText android:id="@+id/edMonRegW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edMonHolW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edMonVacW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edMonSicW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edMonOHW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edMonOCW2"
+                    android:inputType="number"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/w2tu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tuesday"
+                    android:textSize="12dp"/>
+
+                <EditText android:id="@+id/edTueRegW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edTueHolW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edTueVacW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edTueSicW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edTueOHW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edTueOCW2"
+                    android:inputType="number"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <TextView
+                    android:id="@+id/w2w"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wednesday"
+                    android:textSize="12dp"/>
+
+                <EditText android:id="@+id/edWedRegW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edWedHolW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edWedVacW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edWedSicW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edWedOHW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edWedOCW2"
+                    android:inputType="number"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/w2pj"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="PROJECT"
+                    android:textSize="12dp"/>            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="3dp">
+
+                <TextView
+                    android:id="@+id/w2pid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2301TUEXP"
+                    android:textSize="12dp"/>
+
+                <EditText
+                    android:id="@+id/edpdRegW2"
+                    android:inputType="number" />
+
+                <EditText android:id="@+id/edpdHolW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edpdVacW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edpdSicW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edpdOHW2"
+                    android:inputType="number"/>
+
+                <EditText android:id="@+id/edpdOCW2"
+                    android:inputType="number"/>
+
+
+            </TableRow>
+
+            <TableRow>
+                <TextView />
+            </TableRow>
+
+
+
+        </TableLayout>
+
+
+
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="Next"
+            android:onClick="Next"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

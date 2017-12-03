@@ -38,6 +38,7 @@ import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
@@ -317,9 +318,9 @@ public class Signature extends AppCompatActivity {
 //    createPDF(view);
 //}
 
-    public String[] calculatePayPeriods(String strdate) throws ParseException
+    public static String[] calculatePayPeriods(String strdate) throws ParseException
     {
-        DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
         String[] strdates= new String[4];
         int[] sub = {0,-6,-7,-13};
         Date date = new SimpleDateFormat("MM/dd/yyyy").parse(strdate);
@@ -327,19 +328,15 @@ public class Signature extends AppCompatActivity {
         for(int i =0;i<4;i++) {
             Calendar cal = Calendar.getInstance();
             cal.setTime(date);
-            cal.add(Calendar.DAY_OF_YEAR, sub[i]);
+            cal.add(Calendar.DAY_OF_MONTH, sub[i]);
             Date startdate = cal.getTime();
             String reportDate = df.format(startdate);
             strdates[i]= reportDate;
         }
 
 
-
         return strdates;
     }
-
-
-
 
     public void createPDF(String Imgpath)
     {
@@ -446,9 +443,12 @@ public class Signature extends AppCompatActivity {
 
 
 
-    public static void setPage(Document document, String[] emp, TimeReport[] weektime, String[] tot, TimeReport[] weektime2, String[] tot2,String ImgPath) throws BadElementException,DocumentException
+
+
+
+    public static void setPage(Document document, String[] emp, TimeReport[] weektime, String[] tot, TimeReport[] weektime2, String[] tot2,String ImgPath) throws BadElementException,DocumentException,ParseException
     {
-        String[] headers = {"Employee ID","Employee Name", "Pay Period Date"};
+        String[] headers = {" Employee ID"," Employee Name", " Pay Period Date"};
         String[] values = {emp[1],emp[0],emp[2]};
 
         Anchor anchor = new Anchor("BI WEEKLY DOCUMENT");
@@ -484,7 +484,10 @@ public class Signature extends AppCompatActivity {
 
         subCatPart.add(Chunk.NEWLINE);
 
-        Paragraph subPara2 = new Paragraph("Week 1");
+        String[] dates = calculatePayPeriods(values[2]);
+
+
+        Paragraph subPara2 = new Paragraph("Week 1: " +dates[3].toString() + " - " + dates[2].toString());
         Section subCatPart2 = catPart.addSection(subPara2);
         subCatPart2.add(new Paragraph(""));
 
@@ -524,7 +527,8 @@ public class Signature extends AppCompatActivity {
 
         String[] h10 = {"BY PROJECT","Reg","Hol","Vac","Sick","Other Hours","Other Code","Total Hours"};
         String[] v10 = {};
-        createTable(subCatPart2,h6,v6,8);
+        //createTable(subCatPart2,h6,v6,8);
+        createTable(subCatPart2,h10,v10,8);
 
         String[] pjts = {"2301TUEXP"};
         String[] v11 = {};
@@ -548,7 +552,7 @@ public class Signature extends AppCompatActivity {
 
         //Week 2
 
-        Paragraph subPara3 = new Paragraph("Week 2");
+        Paragraph subPara3 = new Paragraph("Week 2:  " +dates[1].toString() + " - " + dates[0].toString());
         Section subCatPart3 = catPart.addSection(subPara3);
         subCatPart3.add(new Paragraph(""));
 
@@ -620,8 +624,7 @@ public class Signature extends AppCompatActivity {
         try
         {
             Image imgsig = Image.getInstance(ImgPath);
-            imgsig.scaleAbsolute(80, 30);
-            //catPart.add(imgsig);
+            imgsig.scaleAbsolute(100, 40);
             subCatPart4.add(new Chunk(imgsig,0,0,true));
         }
         catch (IOException e)
@@ -671,8 +674,6 @@ public class Signature extends AppCompatActivity {
     public static  void createTable(Section sub, String[] values,String[] headers, int cols) throws BadElementException
     {
 
-
-
         PdfPTable pt = new PdfPTable(cols);
 
         if(headers.length > 0) {
@@ -687,7 +688,9 @@ public class Signature extends AppCompatActivity {
         if(values.length >0)
         {
             for(int i = 0; i < values.length;i++) {
+                pt.setHorizontalAlignment(Element.ALIGN_CENTER);
                 pt.addCell(values[i]);
+
             }
         }
         sub.add(pt);

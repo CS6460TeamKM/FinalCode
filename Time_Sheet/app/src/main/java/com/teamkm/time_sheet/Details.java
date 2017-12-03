@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 
@@ -15,6 +16,7 @@ public class Details extends AppCompatActivity {
     String employeename;
     String employeeId;
     String employeeDate;
+    String[] dates;
 
 
     @Override
@@ -27,6 +29,13 @@ public class Details extends AppCompatActivity {
         employeename= bundle.getString("employeename");
         employeeId= bundle.getString("employeeId");
         employeeDate= bundle.getString("employeeDate");
+        dates = bundle.getStringArray("dates");
+
+        TextView tvweek1 = (TextView)findViewById(R.id.tvweek1);
+        TextView tvweek2  = (TextView)findViewById(R.id.tvweek2);
+
+        tvweek1.setText("Week 1::  " +dates[3].toString() + " - " + dates[2].toString());
+        tvweek2.setText("Week 2::  " +dates[1].toString() + " - " + dates[0].toString());
 
 
 

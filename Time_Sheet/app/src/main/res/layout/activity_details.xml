@@ -27,9 +27,13 @@
             android:orientation="horizontal"
             android:stretchColumns="*"
             >
-            <TableRow>
+            <TableRow >
                 <TextView android:text="****WEEK 1****"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:id="@+id/tvweek1"
+                    android:layout_span="6"
+                    android:paddingBottom="5dp"
+                    />
             </TableRow>
 
             <TableRow
@@ -356,7 +360,12 @@
 
             <TableRow>
                 <TextView android:text="****WEEK 2****"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:id="@+id/tvweek2"
+                    android:layout_span="6"
+                    android:paddingBottom="5dp"
+
+                    />
             </TableRow>
 
             <TableRow

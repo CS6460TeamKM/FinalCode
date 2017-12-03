@@ -51,7 +51,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.jar.Attributes;
@@ -213,6 +216,8 @@ public class Signature extends AppCompatActivity {
                 // Convert the output file to Image such as .png
                 bitmap.compress(Bitmap.CompressFormat.PNG, 90, mFileOutStream);
                 createPDF(StoredPath);
+                File delsig = new File(StoredPath);
+                boolean del = delsig.delete();
                 mFileOutStream.flush();
                 mFileOutStream.close();
             } catch (Exception e) {
@@ -311,6 +316,28 @@ public class Signature extends AppCompatActivity {
 //{
 //    createPDF(view);
 //}
+
+    public String[] calculatePayPeriods(String strdate) throws ParseException
+    {
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        String[] strdates= new String[4];
+        int[] sub = {0,-6,-7,-13};
+        Date date = new SimpleDateFormat("MM/dd/yyyy").parse(strdate);
+
+        for(int i =0;i<4;i++) {
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(date);
+            cal.add(Calendar.DAY_OF_YEAR, sub[i]);
+            Date startdate = cal.getTime();
+            String reportDate = df.format(startdate);
+            strdates[i]= reportDate;
+        }
+
+
+
+        return strdates;
+    }
+
 
 
 
@@ -431,8 +458,15 @@ public class Signature extends AppCompatActivity {
 
         Paragraph subPara = new Paragraph("Details");
         Section subCatPart = catPart.addSection(subPara);
+
+        subCatPart.add(Chunk.NEWLINE);
+        subCatPart.add(Chunk.NEWLINE);
+
         subCatPart.add(new Paragraph(""));
         createTable(subCatPart,headers,values, 3 );
+
+        subCatPart.add(Chunk.NEWLINE);
+        subCatPart.add(Chunk.NEWLINE);
 
         String[] h2 = {"Pay Group Description","Bi-weekly Student"};
         String[] v2 = {};
